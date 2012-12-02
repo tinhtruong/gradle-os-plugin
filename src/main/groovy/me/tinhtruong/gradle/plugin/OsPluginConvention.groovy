@@ -61,7 +61,7 @@ class OsPluginConvention {
     }
 
     def unix(Closure closure) {
-        if (isMac()) {
+        if (isUnix()) {
             closure.delegate = this
             closure()
         }
