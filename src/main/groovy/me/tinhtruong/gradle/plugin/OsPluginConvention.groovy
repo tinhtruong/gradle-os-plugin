@@ -28,8 +28,6 @@ class OsPluginConvention {
         } else {
             is64bit = (System.getProperty("os.arch").indexOf("64") != -1);
         }
-        println "os.arch " + System.getProperty("os.arch")
-        println "64bit:" + is64bit
     }
 
     private boolean isWindows() {
