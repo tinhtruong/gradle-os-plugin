@@ -28,6 +28,8 @@ class OsPluginConvention {
         } else {
             is64bit = (System.getProperty("os.arch").indexOf("64") != -1);
         }
+        println "os.arch " + System.getProperty("os.arch")
+        println "64bit:" + is64bit
     }
 
     private boolean isWindows() {
@@ -74,7 +76,7 @@ class OsPluginConvention {
         }
     }
 
-    def i386(Closure closure) {
+    def x86(Closure closure) {
         if (!is64bit) {
             closure.delegate = this
             closure()
@@ -82,7 +84,7 @@ class OsPluginConvention {
     }
 
     def x86_64(Closure closure) {
-        if (!is64bit) {
+        if (is64bit) {
             closure.delegate = this
             closure()
         }
