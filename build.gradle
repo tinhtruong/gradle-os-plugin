@@ -20,6 +20,12 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.3'
 }
 
+jar {
+    manifest {
+        attributes 'Implementation-Version': "${project.version}"
+    }
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {

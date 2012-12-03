@@ -34,7 +34,7 @@ class OsPluginConvention {
         return os.indexOf("win") >= 0
     }
 
-    private boolean isMac() {
+    private boolean isMacOs() {
         return os.indexOf("mac") >= 0
     }
 
@@ -53,8 +53,8 @@ class OsPluginConvention {
         }
     }
 
-    def mac(Closure closure) {
-        if (isMac()) {
+    def macOs(Closure closure) {
+        if (isMacOs()) {
             closure.delegate = this
             closure()
         }
